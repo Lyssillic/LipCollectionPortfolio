@@ -9,6 +9,6 @@ class LipItem(models.Model):
     Brand = models.CharField(max_length=200)
     Flavor = models.CharField(max_length=200)
     Category = models.CharField(max_length=200)
-    Picture = models.ImageField(default='lipItem.PNG', upload_to='media')
+    Picture = models.ImageField(default='lipItem.PNG', upload_to='pictures')
     Price = models.IntegerField()
     Rarity = models.CharField(max_length=200)
