@@ -1,10 +1,10 @@
-{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
 <style>
     * {
@@ -41,12 +41,14 @@
     <nav class="navbar navbar-dark bg-dark">
         <h2>Alyssa's Lip Collection</h2>
         <div class="navbar">
-            <a href="" id="home" class="nav-item nav-link">Home</a>
-            <a href="" id="about" class="nav-item nav-link">About</a>
-            <a href="" id="balm" class="nav-item nav-link">Lip Balm</a>
-            <a href="" id="gloss" class="nav-item nav-link">Lip Gloss</a>
-            <a href="" id="scrub" class="nav-item nav-link">Lip Scrub</a>
+            <a href="{% url 'LipCollection:home' %}" id="home" class="nav-item nav-link">Home</a>
+            <a href="{% url 'LipCollection:about' %}" id="about" class="nav-item nav-link">About</a>
+            <a href="{% url 'LipCollection:balm' %}" id="balm" class="nav-item nav-link">Lip Balm</a>
+            <a href="{% url 'LipCollection:gloss' %}" id="gloss" class="nav-item nav-link">Lip Gloss</a>
+            <a href="{% url 'LipCollection:scrub' %}" id="scrub" class="nav-item nav-link">Lip Scrub</a>
         </div>
     </nav>
+    {% block body %}
+    {% endblock %}
 </body>
 </html>
