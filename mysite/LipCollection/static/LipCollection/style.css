@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.background {
+    background-image: url("rainbow.jpg");
+    background-size: 40%;
+}
+
+.container {
+    border: 4px dotted lightgrey;
+    background-color: lightgrey;
+    border-radius: 10px;
+    color: #343a40;
+}
+
+navbar {
+    font-size: 20px;
+}
+
+h2 {
+    color: #ffb3ba;
+}
+
+#home {
+    color: #ffdfba;
+}
+
+#about {
+    color: #ffffba;
+}
+
+#balm {
+    color: #baffc9;
+}
+
+#gloss {
+    color: #bae1ff;
+}
+
+#scrub {
+    color: #d0baff;
+}
