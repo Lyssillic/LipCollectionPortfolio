@@ -1,9 +1,13 @@
 {% extends 'LipCollection/navbar.html' %}
 {% block body %}
     <div class="background">
-        <div class="container">
-            <h3> Welcome to Alyssa's Lip Collection! </h3>
-            <p>Hello! My name is Alyssa Montgomery, and I collect lip balm, lip gloss, and lip scrubs!</p>
+        <div class="container center">
+            <h3>Welcome!</h3>
+            <p>Hello! My name is Alyssa Montgomery, and I collect lip balm, lip gloss, and lip scrubs! Below you will find my total counts of my lip items per category.</p>
+            <h5>Lip Balm Count: {{ count.lip_balm }}</h5>
+            <h5>Lip Gloss Count: {{ count.lip_gloss }}</h5>
+            <h5>Lip Scrub Count: {{ count.lip_scrub }}</h5>
+            <img width="800px" src="https://i.imgur.com/fA0yvnY.jpg">
         </div>
     </div>
 

@@ -6,7 +6,11 @@ lip_items = LipItem.objects.all()
 
 
 def home(request):
-    return render(request, 'LipCollection/home.html')
+    count = {"lip_balm": len(lip_items.filter(Category__icontains="Lip Balm")),
+             "lip_gloss": len(lip_items.filter(Category__icontains="Lip Gloss")),
+             "lip_scrub": len(lip_items.filter(Category__icontains="Lip Scrub"))
+             }
+    return render(request, 'LipCollection/home.html', {'count': count})
 
 
 def about(request):

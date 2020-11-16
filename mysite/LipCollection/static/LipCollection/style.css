@@ -16,6 +16,23 @@
     margin: 5px;
 }
 
+.center {
+    text-align: center;
+    left: auto;
+    right: auto;
+}
+
+.about {
+    float: left;
+    margin-right: 50px;
+    border-radius: 15px;
+}
+
+.about-text {
+    margin: 15px;
+}
+
+
 .item {
     border: 5px solid white;
     background-color: white;
