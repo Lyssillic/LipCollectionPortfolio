@@ -18,6 +18,11 @@ def about(request):
     return render(request, 'LipCollection/about.html')
 
 
+def detail(request, id):
+    item = LipItem.objects.get(pk=id)
+    return render(request, 'LipCollection/detail.html', {'item': item})
+
+
 def balm(request):
     lip_balms = lip_items.filter(Category__exact="Lip Balm").order_by('Name')
     balm_name = request.GET.get('balm_name')

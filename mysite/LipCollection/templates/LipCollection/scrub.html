@@ -22,7 +22,7 @@
 
             <div class="row">
                 {% for lip_scrub in lip_scrubs %}
-                    <div class="item">
+                    <a href="{% url 'LipCollection:detail' lip_scrub.id %}" class="item">
                         <div class="text">
                             <h6 class="name">{{ lip_scrub.Name }}</h6>
                             <h6>{{ lip_scrub.Brand }}</h6>
@@ -31,7 +31,7 @@
                             <h6>{{ lip_scrub.Rarity }}</h6>
                         </div>
                         <img class="card" src="{{ lip_scrub.Picture.url }}"/>
-                    </div>
+                    </a>
                 {% endfor %}
             </div>
         </div>
