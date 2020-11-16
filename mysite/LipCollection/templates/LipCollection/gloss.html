@@ -3,6 +3,23 @@
     <div class="background">
         <div class="container">
             <h3>Lip Glosses</h3>
+            <div class="row search">
+                <form action="" method="GET">
+                    <input type="search" name="gloss_name">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            {% if lip_glosses.has_previous %}
+                <a class="page" href="?page=1">First</a>
+                <a class="page" href="?page={{ lip_glosses.previous_page_number }}">Previous</a>
+            {% endif %}
+            Page: {{ lip_glosses.number }} of {{ lip_glosses.paginator.num_pages }}
+            {% if lip_glosses.has_next %}
+                <a class="page" href="?page={{ lip_glosses.next_page_number }}">Next</a>
+                <a class="page" href="?page={{ lip_glosses.paginator.num_pages }}">Last</a>
+            {% endif %}
+
             <div class="row">
                 {% for lip_gloss in lip_glosses %}
                     <div class="item">

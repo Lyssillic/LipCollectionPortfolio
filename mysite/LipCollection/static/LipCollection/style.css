@@ -5,6 +5,19 @@
     background-size: 40%;
 }
 
+.nav-link:hover {
+    font-size: 25px;
+}
+
+.page {
+    color: #343a40;
+    margin: 5px;
+}
+
+.page:hover {
+    color: #d0baff;
+}
+
 .card {
     height: 230px;
     border: none;
@@ -16,22 +29,19 @@
     margin: 5px;
 }
 
-.center {
-    text-align: center;
-    left: auto;
-    right: auto;
-}
-
 .about {
     float: left;
     margin-right: 50px;
     border-radius: 15px;
 }
 
+.search {
+    margin: 5px;
+}
+
 .about-text {
     margin: 15px;
 }
-
 
 .item {
     border: 5px solid white;
