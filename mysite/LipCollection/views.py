@@ -24,4 +24,5 @@ def gloss(request):
 
 
 def scrub(request):
-    return render(request, 'LipCollection/scrub.html')
+    lip_scrubs = lip_items.filter(Category__icontains="Lip Scrub").order_by('Name')
+    return render(request, 'LipCollection/scrub.html', {'lip_scrubs': lip_scrubs})

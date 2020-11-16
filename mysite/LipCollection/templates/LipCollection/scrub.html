@@ -3,6 +3,20 @@
     <div class="background">
         <div class="container">
             <h3>Lip Scrubs</h3>
+            <div class="row">
+                {% for lip_scrub in lip_scrubs %}
+                    <div class="item">
+                        <div class="text">
+                            <h6 class="name">{{ lip_scrub.Name }}</h6>
+                            <h6>{{ lip_scrub.Brand }}</h6>
+                            <h6>{{ lip_scrub.Flavor }}</h6>
+                            <h6>${{ lip_scrub.Price }}.00</h6>
+                            <h6>{{ lip_scrub.Rarity }}</h6>
+                        </div>
+                        <img class="card" src="{{ lip_scrub.Picture.url }}"/>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}
