@@ -14,10 +14,6 @@
     margin: 5px;
 }
 
-.page:hover {
-    color: #d0baff;
-}
-
 .card {
     height: 230px;
     border: none;
@@ -48,6 +44,19 @@
     background-color: white;
     border-radius: 10px;
     margin: 10px;
+    color: #343a40;
+}
+
+.balm:hover {
+     color: #baffc9;
+}
+
+.gloss:hover {
+    color: #bae1ff;
+}
+
+.scrub:hover {
+    color: #d0baff;
 }
 
 .container {
