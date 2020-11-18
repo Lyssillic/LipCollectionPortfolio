@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import LipItem
 from django.core.paginator import Paginator
+from django.db.models import Q
 
 
 lip_items = LipItem.objects.all()
@@ -25,10 +26,14 @@ def detail(request, id):
 
 def balm(request):
     lip_balms = lip_items.filter(Category__exact="Lip Balm").order_by('Name')
-    balm_name = request.GET.get('balm_name')
+    search_item = request.GET.get('search_item')
 
-    if balm_name != '' and balm_name is not None:
-        lip_balms = lip_balms.filter(Name__icontains=balm_name)
+    if search_item != '' and search_item is not None:
+        lip_balms = lip_balms.filter(Q(Name__icontains=search_item)
+                                     |
+                                     Q(Brand__icontains=search_item)
+                                     |
+                                     Q(Flavor__icontains=search_item))
 
     paginator = Paginator(lip_balms, 8)
     page = request.GET.get('page')
@@ -38,10 +43,14 @@ def balm(request):
 
 def gloss(request):
     lip_glosses = lip_items.filter(Category__exact="Lip Gloss").order_by('Name')
-    gloss_name = request.GET.get('gloss_name')
+    search_item = request.GET.get('search_item')
 
-    if gloss_name != '' and gloss_name is not None:
-        lip_glosses = lip_glosses.filter(Name__icontains=gloss_name)
+    if search_item != '' and search_item is not None:
+        lip_glosses = lip_glosses.filter(Q(Name__icontains=search_item)
+                                         |
+                                         Q(Brand__icontains=search_item)
+                                         |
+                                         Q(Flavor__icontains=search_item))
 
     paginator = Paginator(lip_glosses, 8)
     page = request.GET.get('page')
@@ -51,10 +60,14 @@ def gloss(request):
 
 def scrub(request):
     lip_scrubs = lip_items.filter(Category__icontains="Lip Scrub").order_by('Name')
-    scrub_name = request.GET.get('scrub_name')
+    search_item = request.GET.get('search_item')
 
-    if scrub_name != '' and scrub_name is not None:
-        lip_scrubs = lip_scrubs.filter(Name__icontains=scrub_name)
+    if search_item != '' and search_item is not None:
+        lip_scrubs = lip_scrubs.filter(Q(Name__icontains=search_item)
+                                       |
+                                       Q(Brand__icontains=search_item)
+                                       |
+                                       Q(Flavor__icontains=search_item))
 
     paginator = Paginator(lip_scrubs, 6)
     page = request.GET.get('page')

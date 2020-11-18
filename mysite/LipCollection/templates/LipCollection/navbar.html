@@ -9,13 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
 <style>
-    * {
+    .navbar {
         font-family: 'Lobster', cursive;
     }
 </style>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <h2 id="title">Alyssa's Lip Collection</h2>
+        <a href="{% url 'LipCollection:home' %}"><h2 id="title">Alyssa's Lip Collection</h2></a>
         <div class="navbar">
             <a href="{% url 'LipCollection:home' %}" id="home" class="nav-item nav-link">Home</a>
             <a href="{% url 'LipCollection:about' %}" id="about" class="nav-item nav-link">About</a>
