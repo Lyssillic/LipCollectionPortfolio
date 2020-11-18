@@ -25,7 +25,12 @@ def detail(request, id):
 
 
 def balm(request):
-    lip_balms = lip_items.filter(Category__exact="Lip Balm").order_by('Name')
+
+    sort = request.GET.get('sort_by')
+    if not sort:
+        sort = 'Name'
+
+    lip_balms = lip_items.filter(Category__exact="Lip Balm").order_by(sort)
     search_item = request.GET.get('search_item')
 
     if search_item != '' and search_item is not None:
