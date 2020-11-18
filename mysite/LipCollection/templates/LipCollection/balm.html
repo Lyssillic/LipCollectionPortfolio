@@ -4,10 +4,18 @@
         <div class="container">
             <h3>Lip Balms</h3>
             <div class="row search">
-                <form action="" method="GET">
-                    <input type="search" name="search_item">
-                    <button type="submit">Search</button>
-                </form>
+                <div class="col-md-4">
+                    <form action="" method="GET">
+                        <input type="search" name="search_item">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+                <h5 class="sort">Sort by: </h5>
+                <div class="sort">
+                    <button id="nameBtn">Name A-Z</button>
+                    <button id="brandBtn">Brand A-Z</button>
+                    <button id="priceBtn">Price $-$$$</button>
+                </div>
             </div>
 
             {% if lip_balms.has_previous %}

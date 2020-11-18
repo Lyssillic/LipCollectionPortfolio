@@ -61,6 +61,15 @@
     color: #d0baff;
 }
 
+.home {
+    width: 100%;
+    height: auto;
+}
+
+.sort {
+    margin-right: 15px;
+}
+
 .container {
     border: 5px solid lightgrey;
     background-color: lightgrey;
