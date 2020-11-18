@@ -47,7 +47,11 @@ def balm(request):
 
 
 def gloss(request):
-    lip_glosses = lip_items.filter(Category__exact="Lip Gloss").order_by('Name')
+    sort = request.GET.get('sort_by')
+    if not sort:
+        sort = 'Name'
+
+    lip_glosses = lip_items.filter(Category__exact="Lip Gloss").order_by(sort)
     search_item = request.GET.get('search_item')
 
     if search_item != '' and search_item is not None:
@@ -64,7 +68,11 @@ def gloss(request):
 
 
 def scrub(request):
-    lip_scrubs = lip_items.filter(Category__icontains="Lip Scrub").order_by('Name')
+    sort = request.GET.get('sort_by')
+    if not sort:
+        sort = 'Name'
+
+    lip_scrubs = lip_items.filter(Category__icontains="Lip Scrub").order_by(sort)
     search_item = request.GET.get('search_item')
 
     if search_item != '' and search_item is not None:
