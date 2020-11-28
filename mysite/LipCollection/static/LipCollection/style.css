@@ -1,10 +1,7 @@
 .background {
     background-image: url("rainbow.jpg");
     background-size: 40%;
-}
-
-.nav-link:hover {
-    font-size: 25px;
+    text-align: center;
 }
 
 .page {
@@ -12,8 +9,8 @@
     margin: 5px;
 }
 
-.card {
-    height: 230px;
+.img {
+    height: 185px;
     border: none;
     float: left;
 }
@@ -25,6 +22,10 @@
 
 .zoom:hover {
   transform: scale(1.5);
+}
+
+.zoom {
+    width: 210px;
 }
 
 .about {
@@ -62,8 +63,12 @@
 }
 
 .home {
-    width: 100%;
+    width: 68.5%;
     height: auto;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sort {
