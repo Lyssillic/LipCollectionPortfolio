@@ -25,7 +25,6 @@ def detail(request, id):
 
 
 def balm(request):
-
     sort = request.GET.get('sort_by')
     if not sort:
         sort = 'Name'

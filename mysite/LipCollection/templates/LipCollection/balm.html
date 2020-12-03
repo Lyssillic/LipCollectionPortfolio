@@ -12,12 +12,13 @@
                 </div>
                 <h5 class="sort">Sort by: </h5>
                 <div class="sort">
-                    <a href="?sort_by=Name"><button>Name A-Z</button></a>
-                    <a href="?sort_by=-Name"><button>Name Z-A</button></a>
-                    <a href="?sort_by=Brand"><button>Brand A-Z</button></a>
-                    <a href="?sort_by=-Brand"><button>Brand Z-A</button></a>
-                    <a href="?sort_by=Price"><button>Price $-$$$</button></a>
-                    <a href="?sort_by=-Price"><button>Price $$$-$</button></a>
+                    {% load qurl %}
+                    <a href="{% qurl request.get_full_path sort_by='Name' %}"><button>Name A-Z</button></a>
+                    <a href="{% qurl request.get_full_path sort_by='-Name' %}"><button>Name Z-A</button></a>
+                    <a href="{% qurl request.get_full_path sort_by='Brand' %}"><button>Brand A-Z</button></a>
+                    <a href="{% qurl request.get_full_path sort_by='-Brand' %}"><button>Brand Z-A</button></a>
+                    <a href="{% qurl request.get_full_path sort_by='Price' %}"><button>Price $-$$$</button></a>
+                    <a href="{% qurl request.get_full_path sort_by='-Price' %}"><button>Price $$$-$</button></a>
                 </div>
             </div>
 
