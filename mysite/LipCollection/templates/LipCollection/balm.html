@@ -23,13 +23,13 @@
             </div>
 
             {% if lip_balms.has_previous %}
-                <a class="page balm" href="?page=1">First</a>
-                <a class="page balm" href="?page={{ lip_balms.previous_page_number }}">Previous</a>
+                <a class="page balm" href="{% qurl request.get_full_path page=1 %}">First</a>
+                <a class="page balm" href="{% qurl request.get_full_path page=lip_balms.previous_page_number %}">Previous</a>
             {% endif %}
             Page: {{ lip_balms.number }} of {{ lip_balms.paginator.num_pages }}
             {% if lip_balms.has_next %}
-                <a class="page balm" href="?page={{ lip_balms.next_page_number }}">Next</a>
-                <a class="page balm" href="?page={{ lip_balms.paginator.num_pages }}">Last</a>
+                <a class="page balm" href="{% qurl request.get_full_path page=lip_balms.next_page_number %}">Next</a>
+                <a class="page balm" href="{% qurl request.get_full_path page=lip_balms.paginator.num_pages %}">Last</a>
             {% endif %}
 
             <div class="row">

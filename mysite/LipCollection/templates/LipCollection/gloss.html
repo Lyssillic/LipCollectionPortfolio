@@ -12,23 +12,24 @@
                 </div>
                 <h5 class="sort">Sort by: </h5>
                 <div class="sort">
-                    <a href="?sort_by=Name"><button>Name A-Z</button></a>
-                    <a href="?sort_by=-Name"><button>Name Z-A</button></a>
-                    <a href="?sort_by=Brand"><button>Brand A-Z</button></a>
-                    <a href="?sort_by=-Brand"><button>Brand Z-A</button></a>
-                    <a href="?sort_by=Price"><button>Price $-$$$</button></a>
-                    <a href="?sort_by=-Price"><button>Price $$$-$</button></a>
+                    {% load qurl %}
+                    <a href="{% qurl request.get_full_path sort_by='Name' %}"><button>Name A-Z</button></a>
+                    <a href="{% qurl request.get_full_path sort_by='-Name' %}"><button>Name Z-A</button></a>
+                    <a href="{% qurl request.get_full_path sort_by='Brand' %}"><button>Brand A-Z</button></a>
+                    <a href="{% qurl request.get_full_path sort_by='-Brand' %}"><button>Brand Z-A</button></a>
+                    <a href="{% qurl request.get_full_path sort_by='Price' %}"><button>Price $-$$$</button></a>
+                    <a href="{% qurl request.get_full_path sort_by='-Price' %}"><button>Price $$$-$</button></a>
                 </div>
             </div>
 
             {% if lip_glosses.has_previous %}
-                <a class="page gloss" href="?page=1">First</a>
-                <a class="page gloss" href="?page={{ lip_glosses.previous_page_number }}">Previous</a>
+                <a class="page gloss" href="{% qurl request.get_full_path page=1 %}">First</a>
+                <a class="page gloss" href="{% qurl request.get_full_path page=lip_glosses.previous_page_number %}">Previous</a>
             {% endif %}
             Page: {{ lip_glosses.number }} of {{ lip_glosses.paginator.num_pages }}
             {% if lip_glosses.has_next %}
-                <a class="page gloss" href="?page={{ lip_glosses.next_page_number }}">Next</a>
-                <a class="page gloss" href="?page={{ lip_glosses.paginator.num_pages }}">Last</a>
+                <a class="page gloss" href="{% qurl request.get_full_path page=lip_glosses.next_page_number %}">Next</a>
+                <a class="page gloss" href="{% qurl request.get_full_path page=lip_glosses.paginator.num_pages %}">Last</a>
             {% endif %}
 
             <div class="row">
